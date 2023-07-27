@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calcular conta de Energia</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <main class="card">
+            <form id="energyForm">
+                <h1 class="title">Calculadora de Conta de Energia</h1>
+                <div class="input-wrapper">
+                    <label for="leituraAtual">Leitura do mês atual em kWh:</label>
+                    <input type="number" id="leituraAtual" name="leituraAtual" required>
+                </div>
+                <div class="input-wrapper">
+                    <label for="leituraMesAnterior">Leitura do mês anterior em kWh:</label>
+                    <input type="number" id="leituraMesAnterior" name="leituraMesAnterior" required>
+                </div>
+                <div class="input-wrapper">
+                    <label for="valorKwh">Valor do kWh da sua região:</label>
+                    <input type="number" id="valorKwh" name="valorKwh" step="0.01" required>
+                </div>
+                <button type="submit" id="calcularButton">Calcular</button>
+            </form>
+        </main>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal" id="modal">
+        <div class="modal-content" id="modalContent">
+            <span class="close" id="closeModal">×</span>
+            <h2>Detalhamento da Conta de Energia</h2>
+            <p><strong>Valor da conta de energia:</strong> R$ <span id="valorConta"></span></p>
+            <p><strong>Neoenergia (CELP):</strong> R$ <span id="valorCelpe"></span></p>
+            <p><strong>Iluminação Pública:</strong> R$ <span id="valorIluminacaoPublica"></span></p>
+            <p><strong>Geração + Bandeira:</strong> R$ <span id="valorGeracaoBandeira"></span></p>
+            <p><strong>Transmissão:</strong> R$ <span id="valorTransmissao"></span></p>
+            <p><strong>Tributo + Encargos:</strong> R$ <span id="valorTributoEncargos"></span></p>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
